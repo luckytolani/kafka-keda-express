@@ -1,0 +1,16 @@
+apiVersion: keda.sh/v1alpha1
+kind: ScaledObject
+metadata:
+  name: kafka-scaled
+  namespace: kafka
+spec:
+  scaleTargetRef:
+    name: consumer
+  triggers:
+    - type: kafka
+      metadata:
+        bootstrapServers: 10.103.80.143:9092
+        consumerGroup: kafka
+        topic: test-topic
+        lagThreshold: "1"
+        desiredReplicas: "1"
