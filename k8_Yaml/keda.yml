@@ -6,11 +6,13 @@ metadata:
 spec:
   scaleTargetRef:
     name: consumer
+  pollingInterval: 30
   triggers:
     - type: kafka
       metadata:
-        bootstrapServers: 10.104.83.187:9092
+        bootstrapServers: 10.101.19.121:9092
         consumerGroup: kafka
         topic: test-topic
         lagThreshold: "1"
         desiredReplicas: "1"
+        offsetResetPolicy: latest
