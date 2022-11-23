@@ -9,7 +9,7 @@ spec:
   triggers:
     - type: kafka
       metadata:
-        bootstrapServers: 10.103.80.143:9092
+        bootstrapServers: 10.104.83.187:9092
         consumerGroup: kafka
         topic: test-topic
         lagThreshold: "1"
